@@ -1,0 +1,140 @@
+.AcceuilDiv{
+    margin-top: 15vh;
+    height: 85vh;
+    width: 100%;
+    position: relative;
+}
+
+.TextDiv{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    padding: 5px 30px;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-family: 'PT Sans Caption', sans-serif;    
+    text-shadow: 1px 1px 1px black;
+    background-color: #021642d5;
+}
+
+.TextDiv p{
+    margin: 0.5% 0;
+}
+.TextDiv::before{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: 
+    linear-gradient(45deg,
+    transparent 40%,
+    #00134220 40%, #00134220 60%,
+    transparent 60%),
+    linear-gradient(135deg,
+    transparent 40%,
+    #00134220 40%, #00134220 60%,
+    transparent 60%);
+    background-size: 100px 100px;
+}
+
+.TextDiv::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 10px;
+    background: linear-gradient(
+      #0b5991,
+      #0b5991 2px,
+      transparent 2px,
+      transparent 3px
+    );
+    background-size:  100% 3px;
+    width: 100%;
+    animation: pan-overlay 10s infinite linear;
+    opacity: 0.2;
+}
+
+
+.TitleTextDiv{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    text-align: start;
+    top: -20px;
+    left: -15px;
+    width: 200px;
+    height: 30px;
+    border-right: none;
+    border-left: none;
+    width: 200px;
+    border-top: 2px solid #97cbd7;
+    border-image: linear-gradient(to right, #97cbd7 60%, transparent 85%) 1;
+    padding-left: 19px;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 15px 100%, 1px 50%, 18px 0);
+}
+
+.TitleTextDiv::before{
+    z-index: 1;
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    border-bottom: 2px solid #4b75af;
+    border-left: 2px solid #a4d1d9;
+    top: 50%;
+    right: 191px;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.TitleTextDiv::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #436493;
+    border-image: linear-gradient(to right, #4b75af 70%, transparent 90%, transparent 100%) 1;
+    background: linear-gradient(to right , #003391de 85%, transparent 95%);
+    top: 0px;
+    left: 0px;
+    width: 90%;
+    height: 27px;
+    transform: skewX(-25deg);
+}
+
+.TextButtonDiv{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) skewX(6deg) skewY(6deg) ;
+    transition: bottom 0.3s;    
+    border: 2px solid white;
+    box-shadow: 0 0 5px #003dca;
+}
+
+.TextButtonDiv::before{
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    box-shadow: 0 0 8px #003dca;
+}
+
+.TextButtonDiv:hover{
+    bottom: 7px;
+    cursor: pointer;
+}

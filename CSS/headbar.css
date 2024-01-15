@@ -1,0 +1,75 @@
+.headbarDiv{
+    position: absolute;
+    top: 0px;
+    height: 15vh;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.288);
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Instrument Serif', serif;
+    font-size: 1em;
+    box-shadow: 0 0px 5px 5px rgba(39, 39, 39, 0.288);
+}
+
+.Button{
+    font-size: 2em;
+    padding: 4.5vh;
+    background: linear-gradient(to top, #c3bdaf 7%, transparent 1px), 
+    linear-gradient(to bottom, #aca699 1%, #c3bdaf 7%, transparent 1px),  
+    linear-gradient(to left, #aca699 1%, #c3bdaf 7%, transparent 1px),  
+    linear-gradient(to right, #aca699 1%, #c3bdaf 7%, transparent 1px);    
+    position: relative;
+    border: 2px solid white;
+    transform: rotate(45deg);
+    z-index: 1;
+    box-shadow: 0px 0px 10px whitesmoke;
+    text-shadow: #ffffff 0.9px 0.9px, #ffffff -0.9px 0.9px, #ffffff -0.9px -0.9px, #ffffff 0.9px -0.9px;
+    transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 1500px){
+    .Button{
+        padding: 3vh;
+        font-size: 1em;
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    }
+}
+.Button::after{
+    content: "";
+    width: 83%;
+    height: 83%;
+    position: absolute;
+    border: 2px solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -99;
+    transition: all 0.3s ease-in-out;
+}
+
+.Button::before{
+    content: var(--txt);
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: letter-spacing 0.3s;
+}
+
+.Button:hover{
+    background-color: rgba(245, 245, 245, 0.5);
+}
+
+.Button:hover::before{
+    letter-spacing: 3px;
+}
+
+.Button:hover::after{
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) rotate(55deg);
+    background-color: rgba(245, 245, 245, 0.336);
+
+}
