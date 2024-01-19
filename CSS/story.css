@@ -3,6 +3,12 @@
     width: 100%;
     background-color: lightblue;
     position: relative;
+    min-width: 100%;
+}
+
+.allLostBelt{
+    display: flex;
+    overflow-x:hidden;
 }
 
 .BGdiv{
@@ -22,7 +28,7 @@
 }
 
 .StoryLogo{
-    top: 0px;
+    top: 2%;
     left: 50%;
     transform: translate(-50%);
     width: fit-content;
@@ -39,4 +45,98 @@
     bottom: 0;
     right: 2%;
     filter: drop-shadow(0px 0px 10px #8bcaf1);
+}
+
+
+.BannerStoryDiv{
+    width: 100%;
+    height: 3vh;
+    border-top: 5px solid #45536c ;
+    border-bottom: 5px solid #45536c;
+    background-color: #c7ced78a;
+    background-image: 
+    linear-gradient(45deg,
+    transparent 40%,
+    #bdc7cf 40%, #bdc7cf 60%,
+    transparent 60%),
+    linear-gradient(-45deg,
+    transparent 40%,
+    #bdc7cf 40%, #bdc7cf 60%,
+    transparent 60%);
+    background-size: 3% 100%;      
+}
+
+@keyframes bannerMove{
+    from{
+        background-position-x: 0%;
+    }
+
+    to{
+        background-position-x: 100%;
+    }
+}
+
+.leftButtonStory,
+.rightButtonStory{
+    position: absolute;
+    font-weight: bold;
+    width: 5vh;
+    height: 5vh;
+    border: 1px solid goldenrod;
+    background: linear-gradient(to top, rgb(202, 199, 199), white);
+    bottom: 10%;
+    z-index: 1;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.leftButtonStory:hover,
+.rightButtonStory:hover{
+    cursor: pointer;
+    transform: translate(-50%) rotate(45deg) scale(1.1);
+}
+
+.leftButtonStory{
+    left: 45%;
+}
+
+.rightButtonStory{
+    left: 55%
+}
+
+
+.leftButtonStory::before{
+    content:"<";
+    font-size: 2em;
+    color: goldenrod;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%) rotate(-45deg) ;
+    text-shadow: 0px 0px 2px rgba(0, 0, 255, 0.589);
+    transition: all 0.3s ease-in-out;
+}
+
+.rightButtonStory::before{
+    content:">";
+    font-size: 2em;
+    color: goldenrod;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    text-shadow: 0px 0px 2px rgba(0, 0, 255, 0.589);
+    transition: all 0.3s ease-in-out;
+}
+
+.leftButtonStory:hover::before {
+    font-size: 2.3em;
+    left: 40%;
+    top: 60%;
+}
+
+.rightButtonStory:hover::before{
+    font-size: 2.3em;
+    left: 60%;
+    top: 40%;
 }
