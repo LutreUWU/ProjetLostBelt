@@ -6,36 +6,29 @@ buttonRight.forEach((element, index)=> {
     RightSlide(index)
     });
   })
-buttonLeft.forEach(element => {
+buttonLeft.forEach((element, index) => {
   element.addEventListener("click", function(){
-  LeftSlide()
+  LeftSlide(index)
   });
 })
-function LeftSlide(){
-  if (widthSlider.scrollLeft == 0 ) {
-    widthSlider.scrollTo({
-      left: widthSlider.offsetWidth * (buttonLeft.length),
-      behavior: 'smooth'
-    })
+function LeftSlide(index){
+  widthSlider.style.animation = "None"
+  page = 100 * (index - 1)
+  if (index == 0 ) {
+    end = 100 * (buttonLeft.length - 1)
+    widthSlider.style.transform = `translateX(-${end}%)`
   } else {
-    widthSlider.scrollTo({
-      left: widthSlider.scrollLeft - widthSlider.offsetWidth,
-      behavior: 'smooth'
-    })
+    widthSlider.style.transform = `translateX(-${page}%)`
   }
   }
 function RightSlide(index){
+  widthSlider.style.animation = "None"
+  page = 100 * (index+1)
   if (index == buttonRight.length - 1) {
-    widthSlider.scrollTo({
-      left: 0,
-      behavior: 'smooth'
-    })
+    widthSlider.style.transform = `translateX(0)`
   } else {
-    widthSlider.scrollTo({
-      left: widthSlider.scrollLeft + widthSlider.offsetWidth,
-      behavior: 'smooth'
-    })
-  }
+    widthSlider.style.transform = `translateX(-${page}%)`
+    }
   }
 
 

@@ -28,7 +28,7 @@
     transition: background-color 0.3s;
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1300px){
     .Button{
         padding: 3vh;
         font-size: 1em;
