@@ -1,3 +1,74 @@
+.bannerSlide{
+    position: relative;
+    display: flex;
+    height: 15vh;
+    width:100%;
+    margin-bottom: 1%;
+}
+
+.BannerDiv{
+    display: flex;
+    min-width: 200%; /* +20% si on ajoute + de de 5 images (Actuellement 10 images)*/
+    animation: slide 60s infinite linear;
+}
+.bannerSlide:hover .BannerDiv{
+    animation-play-state: paused;
+}
+.bannerImage{
+    position: relative;
+    min-width: 20vw;
+    height: 100%;
+    background-image: var(--url);
+    background-size: cover;
+    background-position: center;
+}
+
+.bannerImage::before{
+    content:"";
+    position: absolute;
+    background-image: var(--url);
+    background-size: cover;
+    background-position: center;
+    top:-5%;
+    width: 100%;
+    height: 110%;
+    z-index: -1;
+    filter: blur(8px); 
+}
+
+
+.bannerSlide::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 5%;
+    top: -10%;
+    height: 120%;
+    filter: blur(3px);
+    z-index: 1;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.bannerSlide::after{
+    content: "";
+    position: absolute;
+    right: -1%;
+    width: 5%;
+    top: -10%;
+    height: 120%;
+    filter: blur(3px);
+    z-index: 1;
+    background: linear-gradient(to left, white, transparent);
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
 .StoryDiv{
     height: 85vh;
     width: 100%;
